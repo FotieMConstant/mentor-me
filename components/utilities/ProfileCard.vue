@@ -1,11 +1,6 @@
 <template>
   <div class="max-w-sm bg-white rounded-lg shadow-lg w-80">
-    <div
-      class="bg-cover h-40"
-      style="
-        background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');
-      "
-    ></div>
+    <div class="bg-cover h-40 __bgImg"></div>
     <div class="border-b px-4 pb-6">
       <div class="text-center sm:text-left sm:flex mb-4">
         <img
@@ -60,4 +55,8 @@
 export default {}
 </script>
 
-<style></style>
+<style>
+.__bgImg {
+  background-image: url('https://images.unsplash.com/photo-1522093537031-3ee69e6b1746?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a634781c01d2dd529412c2d1e2224ec0&auto=format&fit=crop&w=2098&q=80');
+}
+</style>
