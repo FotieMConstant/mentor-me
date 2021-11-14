@@ -5,7 +5,11 @@
 ```bash
 # install dependencies
 $ npm install
-
+# setup config file on linux
+$ cp config.example.json config.json
+# setup config file on windows
+$ copy config.example.json config.json
+# cutomize `config.json` file content
 # serve with hot reload at localhost:3000
 $ npm run dev
 

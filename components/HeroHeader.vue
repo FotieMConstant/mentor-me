@@ -36,15 +36,13 @@
                 leading-tight
               "
             >
-              <span id="text-2-span"> I'm ``userName``</span>
+              <span id="text-2-span"> I'm {{ config.mentor.username }}</span>
             </h1>
-            <span class="text-black"
-              ><h4 class="subheading font-weight-thin">
+            <h4 class="subheading font-weight-thin">
                 <span class="textAnimated text-gray-700"
-                  >Full-stack web developer
+                >{{ config.mentor.attribute }}
                 </span>
-              </h4></span
-            >
+            </h4>
           </div>
           <div class="hero-image col-span-6">
             <img
@@ -63,7 +61,7 @@
           </div>
         </div>
         <button class="rounded-full bg-indigo-500 px-4 py-2 text-white">
-          Get in touch
+          <a :href="`mailto: ${config.mentor.email}`">Get in touch</a>
         </button>
       </div>
     </div>

@@ -21,7 +21,7 @@
       >
         <div class="max-w-md mx-auto">
           <div class="font-bold text-gray-600 text-2xl">
-            Javascript Zero to Hero 🚀
+            {{ program.title }}
           </div>
           <div class="divide-y divide-gray-200">
             <div
@@ -35,11 +35,12 @@
               "
             >
               <p>
-                An advanced online playground for Tailwind CSS, including
-                support for things like:
+                {{
+                  program.introduction
+                }}
               </p>
               <ul class="list-disc space-y-2">
-                <li class="flex items-start">
+                <li v-for="(item, idx) in program.list" :key="idx" class="flex items-start">
                   <span class="h-6 flex items-center sm:h-7">
                     <svg
                       class="flex-shrink-0 h-5 w-5 text-cyan-500"
@@ -53,46 +54,13 @@
                       />
                     </svg>
                   </span>
-                  <p class="ml-2">Beginner friendly</p>
-                </li>
-                <li class="flex items-start">
-                  <span class="h-6 flex items-center sm:h-7">
-                    <svg
-                      class="flex-shrink-0 h-5 w-5 text-cyan-500"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <p class="ml-2">
-                    📈 Build 5 JavaScript + 3 React Projects (Portfolio Ready)
-                  </p>
-                </li>
-                <li class="flex items-start">
-                  <span class="h-6 flex items-center sm:h-7">
-                    <svg
-                      class="flex-shrink-0 h-5 w-5 text-cyan-500"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clip-rule="evenodd"
-                      />
-                    </svg>
-                  </span>
-                  <p class="ml-2">👨‍💻 Weekly 1 on 1 mentoring sessions</p>
+                  <p class="ml-2">{{ item }}</p>
                 </li>
               </ul>
               <p>
-                Perfect for learning how the framework works, prototyping a new
-                idea, or creating a demo to share online.
+                {{
+                  program.conclusion
+                }}
               </p>
             </div>
             <div
@@ -114,3 +82,21 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  name: 'MentoringProgram',
+  props: {
+    program: {
+      type: Object,
+      default: () => {
+        return {
+          title: '',
+          introduction: '',
+          list: [],
+          conclusion:''
+        }
+      }
+    }
+  }
+}
+</script>

@@ -3,9 +3,11 @@
     <!-- <Appbar /> -->
     <HeroHeader />
     <AboutMe />
-    <MentoringProgram />
-    <MonthlyFee />
-    <Mentees />
+    <div v-for="(program, idx) in config.programs" :key="idx">
+      <MentoringProgram :program="program"/>
+    </div>
+    <MonthlyFee :plans="config.plans" />
+    <Mentees :mentees="config.mentees" />
     <MyReviews />
   </div>
 </template>

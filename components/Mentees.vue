@@ -56,8 +56,8 @@
         <transition name="fade">
           <div v-show="showCurrentlyMentoring">
             <div class="flex flex-wrap justify-center">
-              <div v-for="mentee in 3" :key="mentee" class="p-6">
-                <utilities-ProfileCard />
+              <div v-for="mentee in mentees.current" :key="mentee" class="p-6">
+                <utilities-ProfileCard :mentee="mentee" />
               </div>
             </div>
           </div>
@@ -65,8 +65,8 @@
         <transition name="fade">
           <div v-show="previousMentees">
             <div class="flex flex-wrap justify-center">
-              <div v-for="mentee in 2" :key="mentee" class="p-6">
-                <utilities-ProfileCard />
+              <div v-for="mentee in mentees.prev" :key="mentee" class="p-6">
+                <utilities-ProfileCard :mentee="mentee" />
               </div>
             </div>
           </div>
@@ -77,6 +77,18 @@
 </template>
 <script>
 export default {
+  name: 'Mentees',
+  props: {
+    mentees: {
+      type: Object,
+      default: () => {
+        return {
+          current: [],
+          prev: []
+        }
+      }
+    }
+  },
   data() {
     return {
       showCurrentlyMentoring: true,

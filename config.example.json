@@ -1,0 +1,88 @@
+{
+  "mentor": {
+    "username": "viryl",
+    "attribute": "Full-stack web developer",
+    "email": "viryl1515@gmail.com"
+  },
+  "about": {
+    "description": "I'm pursuing a Full-Stack Web Development Certificate from Georgia Tech and have extensive management experience as an environmental geologist and marketer. I have a passion for creating clean, polished UI designs using HTML, CSS, &amp; JavaScript, keeping user functionality in mind.",
+    "tags": ["vuejs", "javascript", "Lavravel", "php"]
+  },
+  "programs": [
+    {
+      "title": "Javascript Zero to Hero 🚀",
+      "introduction": "An advanced online playground for Tailwind CSS, including support for things like:",
+      "list": [
+        "Beginner friendly", "📈 Build 5 JavaScript + 3 React Projects (Portfolio Ready)",
+        "👨‍💻 Weekly 1 on 1 mentoring sessions"
+      ],
+      "conclusion": "Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online."
+    },
+    {
+      "title": "Vuejs Zero to Hero 🚀",
+      "introduction": "An advanced online playground for Tailwind CSS, including support for things like:",
+      "list": [
+        "Beginner friendly", "📈 Build 5 JavaScript + 3 React Projects (Portfolio Ready)",
+        "👨‍💻 Weekly 1 on 1 mentoring sessions"
+      ],
+      "conclusion": "Perfect for learning how the framework works, prototyping a new idea, or creating a demo to share online."
+    }
+  ],
+  "plans": {
+    "standart": {
+      "price": 23.78,
+      "time": 1
+    },
+    "premium": {
+      "price": 20.34,
+      "time": 1,
+      "save_percent": 23
+    },
+    "elite": {
+      "price": 17.87,
+      "time": 1,
+      "save_percent": 32
+    }
+  },
+  "mentees": {
+    "current": [
+      {
+        "name": "John Doe",
+        "location": "Douala, Cameroun",
+        "twitter": "@jdoe"
+      },
+      {
+        "name": "John Doe",
+        "location": "Lion, France",
+        "twitter": "@jdoe"
+      },
+      {
+        "name": "John Doe",
+        "location": "Dakar, Senegal",
+        "twitter": "@jdoe"
+      },
+      {
+        "name": "John Doe",
+        "location": "Douala, Cameroun",
+        "twitter": "@jdoe"
+      }
+    ],
+    "prev": [
+      {
+        "name": "John Doe",
+        "location": "Douala, Cameroun",
+        "twitter": "@jdoe"
+      },
+      {
+        "name": "John Doe",
+        "location": "Lion, France",
+        "twitter": "@jdoe"
+      },
+      {
+        "name": "John Doe",
+        "location": "Dakar, Senegal",
+        "twitter": "@jdoe"
+      }
+    ]
+  }
+}

@@ -24,7 +24,7 @@
       </p>
       <div class="flex flex-wrap items-center justify-center py-4 pt-0">
         <div class="w-full p-4 md:w-1/2 lg:w-1/4 plan-card">
-          <label
+          <div
             class="
               flex flex-col
               rounded-lg
@@ -49,7 +49,9 @@
                 Standard
               </h3>
               <p class="text-5xl font-bold text-center text-blue-500">
-                $25.<span class="text-3xl">95</span>
+                ${{ Math.floor(plans.standart.price) }}.<span class="text-3xl">
+                {{ (plans.standart.price + '').split('.')[1] ?(plans.standart.price + '').split('.')[1] : '00' }}
+              </span>
               </p>
               <p class="text-xs text-center uppercase text-blue-500">monthly</p>
             </div>
@@ -65,7 +67,7 @@
                 bg-blue-500
               "
             >
-              <p class="text-xl text-white">1 month</p>
+              <p class="text-xl text-white">{{ plans.standart.time }} month</p>
               <button
                 class="
                   w-5/6
@@ -83,11 +85,11 @@
                 Get Started
               </button>
             </div>
-          </label>
+          </div>
         </div>
 
         <div class="w-full p-4 md:w-1/2 lg:w-1/4">
-          <label
+          <div
             class="
               flex flex-col
               rounded-lg
@@ -111,7 +113,9 @@
                 Premium
               </h3>
               <p class="text-5xl font-bold text-center text-white">
-                $21.<span class="text-3xl">95</span>
+                ${{ Math.floor(plans.premium.price) }}.<span class="text-3xl">
+                {{ (plans.premium.price + '').split('.')[1] ?(plans.premium.price + '').split('.')[1] : '00' }}
+              </span>
               </p>
               <p class="text-xs text-center uppercase text-white">monthly</p>
             </div>
@@ -127,7 +131,7 @@
                 bg-blue-700
               "
             >
-              <p class="text-xl text-white">3 months</p>
+              <p class="text-xl text-white">{{ plans.premium.time }} months</p>
               <button
                 class="
                   w-5/6
@@ -142,14 +146,14 @@
                   text-blue-500
                 "
               >
-                Save 15%
+                Save {{ plans.premium.save_percent }}%
               </button>
             </div>
-          </label>
+          </div>
         </div>
 
         <div class="w-full p-4 md:w-1/2 lg:w-1/4 plan-card">
-          <label
+          <div
             class="
               flex flex-col
               rounded-lg
@@ -157,7 +161,7 @@
               group
               card-group
               relative
-              hover:bg-jblue-secondary
+              hover:bg-blue-secondary
               cursor-pointer
               hover:shadow-2xl
             "
@@ -176,7 +180,9 @@
                 Elite
               </h3>
               <p class="text-5xl font-bold text-center text-blue-500">
-                $19.<span class="text-3xl">45</span>
+                ${{ Math.floor(plans.elite.price) }}.<span class="text-3xl">
+                {{ (plans.elite.price + '').split('.')[1] ?(plans.elite.price + '').split('.')[1] : '00' }}
+              </span>
               </p>
               <p class="text-xs text-center uppercase text-blue-500">monthly</p>
             </div>
@@ -192,7 +198,7 @@
                 bg-blue-500
               "
             >
-              <p class="text-xl text-white">6 months</p>
+              <p class="text-xl text-white">{{ plans.elite.time }} months</p>
               <button
                 class="
                   w-5/6
@@ -207,10 +213,10 @@
                   text-blue-500
                 "
               >
-                Save 25%
+                Save {{ plans.elite.save_percent }}%
               </button>
             </div>
-          </label>
+          </div>
         </div>
       </div>
     </div>
@@ -218,7 +224,31 @@
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'MonthlyFee',
+  props: {
+    plans: {
+      type: Object,
+      default: () => {
+        return {
+          "standart": {
+            "price": 56.78,
+            "time": 3
+          },
+          "premium": {
+            "price": 78.12,
+            "time": 2
+          },
+          "elite": {
+            "price": 45,
+            "time": 2,
+            "save_percent": 78
+          }
+        }
+      }
+    }
+  }
+}
 </script>
 
 <style></style>
